@@ -63,6 +63,21 @@ block main
             div.classbox
               div 
                 div(id="numberOfCantripsChosen") Cantrips 0/4
+                div(id="preparedCantrips")
+                button(id='cantripMenuButton') Open Cantrip Menu
+            div.classbox(id="cantripPopupMenu" style="display: none")
+              div.spellMenu(id="cantripMenu")
+                h2(id="spellTitle") Fire Bolt
+                h5(id="spellSchool") Level 0 Evocation (Sorcer, Wizard)
+                h5(id="castingTime") Casting Time: Action 
+                h5(id="range") Range: Touch 
+                h5(id="component") Component: V, S 
+                h5(id="duration") Duration: Instantaneous
+                p(id='description') Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum
+              div.ButtonBar
+                button(id="leftCantripbutton") Left
+                button(id="addCantripButton") Toggle spell
+                button(id="rightCantripButton") right
             button(type='submit') submit
           div
             img(src="/static/img/testImage.jpg" alt="classImage")

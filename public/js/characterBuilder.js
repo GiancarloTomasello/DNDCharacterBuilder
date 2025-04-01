@@ -18,23 +18,34 @@ var weaponProficiencyElement = document.getElementById('weaponProficiencies');
 var armorTrainingElement = document.getElementById('armorTraining');
 var startingEquipmentElement = document.getElementById('startingEquipment');
 
+
+//Spell elements
 var skillSelectionElement = document.getElementById('skillSelection');
 var spellChoiceElement = document.getElementById('spellChoices');
 var numSpellsElement = document.getElementById('numberOfSpellsChosen');
-
-
 var spellMenuButton = document.getElementById('spellMenuButton');
 var spellPopupElement = document.getElementById('spellPopupMenu');
 var isSpellMenuOpen = false;
 var leftSpellButton = document.getElementById('leftSpellbutton');
 var rightSpellButton = document.getElementById('rightSpellButton');
 var addSpellButton = document.getElementById('addSpellButton');
+
 var spellMenuElement = document.getElementById('spellMenu');
 var preparedSpellsElement = document.getElementById('preparedSpells');
 
-
+//Cantrip elements
+var cantripPopupElement = document.getElementById('cantripPopupMenu');
 var cantripMenuElement = document.getElementById('cantripMenu');
 var preparedCantripElement = document.getElementById('preparedCantrips');
+var iscantripMenuOpen = false;
+
+var cantripMenuButton = document.getElementById('cantripMenuButton');
+var leftCantripButton = document.getElementById('leftCantripbutton');
+var rightCantripButton = document.getElementById('rightCantripButton');
+var addCantripButton = document.getElementById('addCantripButton');
+
+var numCantripElement = document.getElementById('numberOfCantripsChosen');
+
 
 
 var characterForm = document.getElementById('');
@@ -129,26 +140,10 @@ const updateVal = function() {
     //Make a seperate function?
     classSpells = getSpellList(1);
     spellIndex = 0;
-    classCantrips = getSpellList(0);
+    classCantrips = getSpellList(0, true);
+    cantripIndex = 0;
     UpdateSpellMenu(null, 0);
-
-    // availableSpells = getSpellList(1);
-
-    // for(let numSpells = 0; numSpells < 4; numSpells++){
-    //     let spellSelector = document.createElement('select');
-    //     for(const spell of availableSpells){
-    //         let spellOption = document.createElement('option');
-    //         spellOption.textContent = spell.spellName;
-    //         spellSelector.appendChild(spellOption);
-    //     }
-
-    //     let newDiv = document.createElement('div');
-    //     spellChoiceElement.appendChild(newDiv);
-    //     spellChoiceElement.appendChild(spellSelector);
-        
-    // }
-    
-
+    UpdateCantripMenu(null, 0);
 
 }
 
@@ -161,8 +156,9 @@ function getSpellList(spellLimit = 9, getCantrips = false){
 let classSpells = getSpellList(1);
 // console.log(classSpells);
 let spellIndex = 0;
-let classCantrips = getSpellList(0);
-// console.log(classCantrips);
+let classCantrips = getSpellList(0, true);
+let cantripIndex = 0;
+console.log(classCantrips);
 
 function ToggleSpellMenu(e){
     e.preventDefault();
@@ -182,20 +178,21 @@ function ToggleSpellMenu(e){
 }
 
 
+
 function UpdateSpellMenu(e, spellChange){
     if(e)
         e.preventDefault();
     //window.alert(spellChange)
-
+    
     spellIndex += spellChange;
-
+    
     if(spellIndex >= classSpells.length){
         spellIndex = 0;
     }else if(spellIndex < 0){
         spellIndex = classSpells.length -1;
     }
     console.log(spellIndex);
-
+    
     //---Update Spell Menu------//
     spellMenuElement.querySelector("#spellTitle").textContent = classSpells[spellIndex].spellName;
     spellMenuElement.querySelector("#spellSchool").textContent = `Level ${classSpells[spellIndex].spellLevel} ${classSpells[spellIndex].spellSchool} [${classSpells[spellIndex].classRestrict.toString()}]`;
@@ -204,14 +201,14 @@ function UpdateSpellMenu(e, spellChange){
     spellMenuElement.querySelector("#component").textContent = `Components: [${classSpells[spellIndex].components.toString()}]`;
     spellMenuElement.querySelector("#duration").textContent = `Duration: ${classSpells[spellIndex].duration}`;
     spellMenuElement.querySelector("#description").textContent = `Duration: ${classSpells[spellIndex].description}`;
-
+    
     
 }
 
 const preparedSpells = new Set();
 function AddSpellToCharacter(e){
     e.preventDefault();
-
+    
     if(preparedSpells.has(classSpells[spellIndex].spellName)){
         console.log("Spell already in library")
         preparedSpells.delete(classSpells[spellIndex].spellName);
@@ -233,42 +230,98 @@ function updatePreparedSpells(){
         preparedSpellsElement.appendChild(newdiv);
     });
     //preparedSpellsElement.innerHTML;
-    console.log(preparedSpellsElement);
+    //console.log(preparedSpellsElement);
 }
 
-function updateCantripMenu(e, cantripChange){
+//---Cantrip Functions---//
+function ToggleCantripMenu(e){
+    e.preventDefault();
+
+    UpdateCantripMenu(e, 0);
+
+    if(iscantripMenuOpen){
+        iscantripMenuOpen = false;
+        cantripPopupElement.style.display = 'none';
+        cantripMenuButton.textContent = 'Open Spell Menu';
+    }else{
+        iscantripMenuOpen = true;
+        cantripPopupElement.style.display = 'block';
+        cantripMenuButton.textContent = 'Hide Spell Menu';
+    }
+    //console.log("openCantripMenu");
+}
+
+function UpdateCantripMenu(e, cantripChange){
     if(e)
         e.preventDefault();
     //window.alert(spellChange)
 
-    spellIndex += spellChange;
+    cantripIndex += cantripChange;
 
-    if(spellIndex >= classSpells.length){
-        spellIndex = 0;
-    }else if(spellIndex < 0){
-        spellIndex = classSpells.length -1;
+    if(cantripIndex >= classCantrips.length){
+        cantripIndex = 0;
+    }else if(cantripIndex < 0){
+        cantripIndex = classCantrips.length -1;
     }
-    console.log(spellIndex);
+    console.log(cantripIndex);
+    console.log(classCantrips);
 
-    //---Update Spell Menu------//
-    cantripMenuElement.querySelector("#spellTitle").textContent = classSpells[spellIndex].spellName;
-    cantripMenuElement.querySelector("#spellSchool").textContent = `Level ${classSpells[spellIndex].spellLevel} ${classSpells[spellIndex].spellSchool} [${classSpells[spellIndex].classRestrict.toString()}]`;
-    cantripMenuElement.querySelector("#castingTime").textContent = `Casting Time: ${classSpells[spellIndex].castingTime}`;
-    cantripMenuElement.querySelector("#range").textContent = `Range: ${classSpells[spellIndex].range}`;
-    cantripMenuElement.querySelector("#component").textContent = `Components: [${classSpells[spellIndex].components.toString()}]`;
-    cantripMenuElement.querySelector("#duration").textContent = `Duration: ${classSpells[spellIndex].duration}`;
-    cantripMenuElement.querySelector("#description").textContent = `Duration: ${classSpells[spellIndex].description}`;
+
+    //---Update cantrip Menu------//
+    cantripMenuElement.querySelector("#spellTitle").textContent = classCantrips[cantripIndex].spellName;
+    cantripMenuElement.querySelector("#spellSchool").textContent = `Level ${classCantrips[cantripIndex].spellLevel} ${classCantrips[cantripIndex].spellSchool} [${classCantrips[cantripIndex].classRestrict.toString()}]`;
+    cantripMenuElement.querySelector("#castingTime").textContent = `Casting Time: ${classCantrips[cantripIndex].castingTime}`;
+    cantripMenuElement.querySelector("#range").textContent = `Range: ${classCantrips[cantripIndex].range}`;
+    cantripMenuElement.querySelector("#component").textContent = `Components: [${classCantrips[cantripIndex].components.toString()}]`;
+    cantripMenuElement.querySelector("#duration").textContent = `Duration: ${classCantrips[cantripIndex].duration}`;
+    cantripMenuElement.querySelector("#description").textContent = `${classCantrips[cantripIndex].description}`;
 
 }
 
+const preparedCantrips = new Set();
+function AddCantripToCharacter(e){
+    e.preventDefault();
+    
+    if(preparedCantrips.has(classCantrips[cantripIndex].spellName)){
+        console.log("Spell already in library")
+        preparedCantrips.delete(classCantrips[cantripIndex].spellName);
+    }else if(preparedCantrips.size < classes[listDiv.selectedIndex].preparedCantrips){ 
+        preparedCantrips.add(classCantrips[cantripIndex].spellName);
+        console.log(preparedCantrips);
+    }
+    //console.log("test:" + numSpellsElement.textContent)
+    numCantripElement.textContent = `Choose Cantrips ${preparedCantrips.size}/${classes[listDiv.selectedIndex].preparedCantrips}`
+    updatePreparedCantrips();
+    
+}
+
+function updatePreparedCantrips(){
+    preparedCantripElement.innerHTML = '';
+    preparedCantrips.forEach((spell) => {
+        let newdiv = document.createElement('div');
+        newdiv.textContent = spell;
+        preparedCantripElement.appendChild(newdiv);
+    });
+    //preparedSpellsElement.innerHTML;
+    //console.log(preparedCantripElement);
+}
+
+//----//
 updateVal();
 
 /* Event Listenters */
 listDiv.addEventListener("change", updateVal);
 spellMenuButton.addEventListener("click", ToggleSpellMenu);
+cantripMenuButton.addEventListener("click", ToggleCantripMenu);
+
 rightSpellButton.addEventListener("click", (event)=> {UpdateSpellMenu(event, 1)});
 leftSpellButton.addEventListener("click", (event)=> {UpdateSpellMenu(event, -1)});
 addSpellButton.addEventListener("click", AddSpellToCharacter);
+
+
+rightCantripButton.addEventListener("click", (event)=> {UpdateCantripMenu(event, 1)});
+leftCantripButton.addEventListener("click", (event)=> {UpdateCantripMenu(event, -1)});
+addCantripButton.addEventListener("click", AddCantripToCharacter);
 
 
 function validateForm(event) {

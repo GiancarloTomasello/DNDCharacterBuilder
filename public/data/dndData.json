@@ -13,6 +13,7 @@
                     "Charisma"
                 ],
                 "preparedSpells": 4,
+                "preparedCantrips": 3,
                 "NumberOfSkills": 2,
                 "SkillList": [
                     "History",
@@ -52,6 +53,7 @@
                     "Constitution"
                 ],
                 "preparedSpells": 0,
+                "preparedCantrips": 0,
                 "NumberOfSkills": 2,
                 "SkillList": [
                     "Acrobatics", 
@@ -90,6 +92,7 @@
                     "Intelligence"
                 ],
                 "preparedSpells": 0,
+                "preparedCantrips": 0,
                 "NumberOfSkills": 4,
                 "SkillList": [
                     "Acrobatics", 
@@ -128,6 +131,7 @@
                     "Wisdom"
                 ],
                 "preparedSpells": 4,
+                "preparedCantrips": 3,
                 "NumberOfSkills": 2,
                 "SkillList": [
                     "Arcana",
@@ -331,7 +335,7 @@
                 "spellName": "Blade Ward",
                 "spellLevel": 0,
                 "spellSchool": "Abjuration",
-                "classRestrict": ["bard", "sorcerer", "warlock", "Wizard"],
+                "classRestrict": ["bard", "Cleric", "sorcerer", "warlock", "Wizard"],
                 "castingTime": "Action",
                 "range": "self",
                 "components": ["V", "S"],
@@ -345,29 +349,80 @@
             },
             {
 
-                "spellName": "Blade Ward B",
+                "spellName": "Sacred Flame",
                 "spellLevel": 0,
-                "spellSchool": "Abjuration",
-                "classRestrict": ["bard", "sorcerer", "warlock", "Wizard"],
+                "spellSchool": "Evocation",
+                "classRestrict": ["Cleric"],
                 "castingTime": "Action",
-                "range": "self",
+                "range": "60 feet",
                 "components": ["V", "S"],
-                "duration": "1 minutes",
-                "concentration": true,
+                "duration": "Instanteneous",
+                "concentration": false,
                 "Effect" : {},
-                "damage": [""],
+                "damage": ["1d8", "2d8", "3d8", "4d8"],
                 "canUpcast": false,
                 "description": ""
                 
             }, 
             {
 
-                "spellName": "Blade Ward c",
+                "spellName": "Bless",
                 "spellLevel": 0,
-                "spellSchool": "Abjuration",
-                "classRestrict": ["bard", "Cleric", "sorcerer", "warlock", "Wizard"],
+                "spellSchool": "Enchanment",
+                "classRestrict": ["Cleric", "paladin"],
                 "castingTime": "Action",
-                "range": "self",
+                "range": "30 feet",
+                "components": ["V", "S", "M - Holy symbol worth 5+ GP"],
+                "duration": "1 Minute",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+                
+            },
+            {
+
+                "spellName": "Thaumaturgy",
+                "spellLevel": 0,
+                "spellSchool": "Transmutation",
+                "classRestrict": ["Cleric"],
+                "castingTime": "Action",
+                "range": "30 feet",
+                "components": ["V"],
+                "duration": "1 Minute",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": "You manifest a minor wonder within range. You create one of the effects below within range. If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time....."
+
+            }, 
+            {
+
+                "spellName": "Light",
+                "spellLevel": 0,
+                "spellSchool": "Evocation",
+                "classRestrict": ["bard", "Cleric", "sorcerer", "Wizard"],
+                "castingTime": "Action",
+                "range": "Touch",
+                "components": ["V", "M - Firefly or phosporescent moss"],
+                "duration": "1 hour",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+
+            }, 
+            {
+
+                "spellName": "Mage Hand",
+                "spellLevel": 0,
+                "spellSchool": "Conjuration",
+                "classRestrict": ["bard", "sorcerer", "warlock", "Wizard"],
+                "castingTime": "Action",
+                "range": "30 feet",
                 "components": ["V", "S"],
                 "duration": "1 minutes",
                 "concentration": true,
@@ -375,7 +430,24 @@
                 "damage": [""],
                 "canUpcast": false,
                 "description": ""
-                
+
+            }, 
+            {
+
+                "spellName": "Ray of Frost",
+                "spellLevel": 0,
+                "spellSchool": "Conjuration",
+                "classRestrict": ["sorcerer", "Wizard"],
+                "castingTime": "Action",
+                "range": "60 feet",
+                "components": ["V", "S"],
+                "duration": "Instanteneous",
+                "concentration": true,
+                "Effect" : {},
+                "damage": ["1d8", "2d8", "3d8", "4d8"],
+                "canUpcast": false,
+                "description": ""
+
             }, 
             {
 
