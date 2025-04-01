@@ -1,0 +1,53 @@
+extends layout 
+
+block main
+  section.abilitypage
+    h1 Let's set your ability score
+    form(action='/abilityScore', method='post')
+      div.abilitybox-test
+        div
+          label Strength
+          input(type="number" name="strength" id="StrengthInput" min="0" max ="20" value="10")
+        div
+          label Dexterity
+          input(type="number" name="dexterity" id="DexterityInput" min="0" max ="20" value="10")
+        div
+          label Constitution
+          input(type="number" name="constitution" id="ConstitutionInput" min="0" max ="20" value="10")
+        div
+          label Intelligence
+          input(type="number" name="intelligence" id="IntelligenceInput" min="0" max ="20" value="10")
+        div
+          label Wisdom
+          input(type="number" name="wisdom" id="WisdomInput" min="0" max ="20" value="10")
+        div
+          label Charisma
+          input(type="number" name="charisma" id="CharismaInput" min="0" max ="20" value="10")
+      div.abilitybox
+        div(id="StrengthDisplay") Strength
+          div(id="StrengthBaseScore") Base Score: 10
+          div(id="StrengthModifier") Modifier: +0
+          div Total Score: +0
+          div Bonuses (+2)
+            div dragonBorn +1
+          div Magic Items
+          div Other modifier ---
+        div(id="DexterityDisplay") Dexterity
+          div(id="DexterityBaseScore") Base Score: 10
+          div(id="DexterityModifier") Modifier: +0
+        div Constitution
+          div(id="ConstitutionBaseScore") Base Score: 10
+          div(id="ConstitutionModifier") Modifier: +0
+      div.abilitybox
+        div Intelligence
+          div(id="IntelligenceBaseScore") Base Score: 10
+          div(id="IntelligenceModifier") Modifier: +0
+        div Wisdom
+          div(id="WisdomBaseScore") Base Score: 10
+          div(id="WisdomModifier") Modifier: +0
+        div Charisma
+          div(id="CharismaBaseScore") Base Score: 10
+          div(id="CharismaModifier") Modifier: +0
+      button(type= 'submit') Submit
+    script(type='module' src='/static/js/abilityScore.js')
+

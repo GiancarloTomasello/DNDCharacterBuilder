@@ -1,0 +1,51 @@
+extends layout
+
+block main 
+  section.classpage
+    h1 Next Let's determine your hero's origin
+    form(action='/backgroundAndSpecies', method='post')
+        div.classbox
+          img(alt="backgrounds image")
+        div.classbox
+          div Select a Background
+            div
+              select(name="background" id='backgroundsList')
+            div
+              p Ability Scores:
+                p(id="abilityScores") Ability scores: [Strength, Constitution]
+              p Skill Proficiencies:
+                p(id="skillProficiency") Skill Proficency: None
+              p Tool Proficency:
+                p(id="toolProficiency")
+              p Equiptment: None
+          div
+            div Decription
+              p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          div
+            p Origin Feat:
+            p(id="originFeat") Feat desc: n/a
+        div.classbox
+          img(alt="Species image")
+        div.classbox
+          div Select your Species
+            div
+              select(name="specie" id='speciesList')
+            div
+              p(id="creatureType") creatureType: wwd
+              p(id="sizeClass") Size Class: medium
+              p(id="speed") Speed: 30f
+          div
+            div Description
+            p "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." 
+          div(id='specieFeaturesPanel')
+            p Specie feature:
+              p(id="SpecieFeat")
+        div.classbox
+          div
+            p Origin feature options 
+          div
+            p Species feature option
+        div
+          button(type='submit') submit
+    script(type='module' src='/static/js/backgroundAndSpecies.js')
+

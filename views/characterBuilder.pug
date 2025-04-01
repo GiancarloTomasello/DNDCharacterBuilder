@@ -1,0 +1,70 @@
+extends layout
+  
+block main
+  section.classpage
+    h1 Let's create a fantasy character
+    form(action='/characterBuilder', method='post')
+        div.classbox
+          div
+            label Select your Class.........
+            select(name="class" id='classList')
+            div.classbox
+              div(name="Primariy Ability" id="primariyAbility") Primary Ability: Stat
+              div(name="Likes" id="likes") Likes: ""
+            div.classbox 
+              div Description
+            div.classbox
+              div "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            div.classbox
+              div Hit Point Die:
+              div(id="hitDie")
+            div.classbox
+              div Saving Throw Proficiencies: 
+              div(id="savingThrows") Saving Throw Proficiencies: 
+            div.classbox
+              div Skill Proficiencies:
+              div Choose a skill
+                div(id="skillSelection") Select 2 skills: 
+                  //- div
+                  //-   select First SKILL
+                  //-     option 1
+                  //-     option 2
+                  //- div
+                  //-   select test
+                  //-     option 2
+                  //-     option 3
+            div.classbox
+              div Weapon Proficiencies: 
+              div(id="weaponProficiencies") Weapon Proficiencies: 
+            div.classbox
+              div Armor Training:
+              div(id="armorTraining") Armor Training:
+            div.classbox
+              div Starting Equipment
+              div(id="startingEquipment") Starting Equipment
+            div.classbox
+              div
+                div(id="numberOfSpellsChosen") Choose Spells 0/4
+                div(id="preparedSpells")
+                button(id='spellMenuButton') Open Spell Menu
+            div.classbox(id="spellPopupMenu" style="display: none")
+              div.spellMenu(id="spellMenu")
+                h2(id="spellTitle") Fire Bolt
+                h5(id="spellSchool") Level 1 Evocation (Sorcer, Wizard)
+                h5(id="castingTime") Casting Time: Action 
+                h5(id="range") Range: Touch 
+                h5(id="component") Component: V, S 
+                h5(id="duration") Duration: Instantaneous
+                p(id='description') Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum Lorum Ipsum
+              div.ButtonBar
+                  button(id="leftSpellbutton") Left
+                  button(id="addSpellButton") Toggle spell
+                  button(id="rightSpellButton") right
+            div.classbox
+              div 
+                div(id="numberOfCantripsChosen") Cantrips 0/4
+            button(type='submit') submit
+          div
+            img(src="/static/img/testImage.jpg" alt="classImage")
+    script(type='module' src='/static/js/characterBuilder.js')
+

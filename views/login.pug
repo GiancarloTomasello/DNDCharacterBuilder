@@ -1,0 +1,13 @@
+extends layout 
+
+block main
+  section.mainpage
+    form.mainpage-form(action='/welcome', method='post')
+      h1.mainpage-title LOG IN
+      label Welcome traveler, please login~
+      label.mainpage-prompt Username 
+          input(type='text', name='username')
+      label.mainpage-prompt Password 
+          input(type='text', name='password')
+      button.mainpage-submit(type='submit') Submit
+

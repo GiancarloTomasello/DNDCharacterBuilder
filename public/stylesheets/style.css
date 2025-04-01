@@ -1,0 +1,241 @@
+
+body {
+    position: relative;
+}
+
+body {
+    background-color: #EDEAD9;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  }
+
+/* LogIn */
+
+.mainpage {
+    background-color: #F5F3ED;
+    max-width: 400px;
+    margin: auto;
+    color: #727C85;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.mainpage-greeting {
+    font-size: 1em;
+    font-weight: 400;
+    width: 50%;
+  }
+  
+  .mainpage-form {
+    padding-top: 15px;
+  }
+  
+  .mainpage-prompt {
+    font-size: 26px;
+    font-weight: 400;
+    display: block;
+    padding-top: 45px;
+  }
+
+  .mainpage-title {
+    font-size: 38px;
+    font-weight: 400;
+    display: block;
+    padding-top: 5px;
+  }
+  
+  .mainpage-name {
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .mainpage-submit {
+    margin-top: 50px;
+    background-color: #fff;
+    border: 2px #D64226 solid;
+    font-size: 1em;
+    padding: 8px 10px;
+    color: #D64226;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+  }
+  
+  .mainpage-submit:hover {
+    background-color: #D64226;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .mainpage-exit {
+    width: 50%;
+    text-align: right;
+  }
+  
+  .mainpage-exit button {
+    background-color: #F5F3ED;
+    border: none;
+    margin-top: 2px;
+    outline: none;
+  }
+  
+  .mainpage-exit button:hover {
+    cursor: pointer;
+  }
+
+/* Option Selection */
+.welcomepage {
+    background-color: #F5F3ED;
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+    color: #727C85;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.welcomebutton{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.welcomebutton:hover {
+    background-color: #a5b2e7;
+}
+  
+/* Class Selection */
+.classpage{
+    background-color: #F5F3ED;
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
+    color: #727C85;
+    text-align: center;
+    border-radius: 20px;
+    padding-top: 15px;
+}
+
+.classbox > * {
+  border: 2px solid rgb(96 139 168);
+  border-radius: 5px;
+  background-color: rgb(96 139 168 / 0.2);
+}
+.classbox{
+  border: 2px dotted rgb(96 139 168);
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  justify-self: center;
+}
+
+
+.classbox img{
+  min-height: 120px;
+  max-height: 500px;
+}
+
+.classbox p {
+  max-width: 500px;
+}
+
+.classbox div {
+  align-items: baseline;
+  flex: 1 1 auto;
+}
+
+
+/* Class Selection */
+.abilitypage{
+  background-color: #F5F3ED;
+  max-width: 80%;
+  max-height: 80%;
+  margin: auto;
+  color: #727C85;
+  text-align: center;
+  border-radius: 20px;
+  padding-top: 15px;
+}
+
+.abilitybox > * {
+border: 2px solid rgb(169, 0, 0);
+border-radius: 5px;
+background-color: rgba(103, 2, 2, 0.2);
+}
+
+.abilitybox{
+border: 2px dotted rgb(54, 2, 21);
+display: flex;
+width: 90%;
+justify-content: center;
+justify-self: center;
+}
+
+.abilitybox div {
+  align-items: baseline;
+  flex: 1 1 auto;
+}
+
+.abilitybox-test{
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  justify-self: center;
+}
+.abilitybox-test > * {
+  border: 2px solid rgb(169, 0, 0);
+  border-radius: 5px;
+  background-color: rgba(103, 2, 2, 0.2);
+}
+
+.abilitybox-test div {
+  align-items: baseline;
+  flex: 1 1 auto;
+}
+
+.abilitybox-test label {
+  padding: 5%;
+}
+
+.spellMenu{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.spellMenu h2{
+  text-align: center;
+  margin-top: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+.spellMenu h5{
+  text-align: left;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 0.5em;
+}
+
+.buttonBar{
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+  background-color: #a5b2e7;
+  border: 2px dotted rgb(169, 0, 0);
+  width: 100%;
+}
+
+.spellMenu-ButtonLeft{
+  color: #a5b2e7;
+}
+.spellMenu-ButtonRight{
+  color: #D64226;
+}

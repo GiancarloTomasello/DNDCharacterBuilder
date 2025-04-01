@@ -1,0 +1,181 @@
+{
+    "data": {
+        "title": "D&D 2024",
+        "classes": [
+            {
+                "className": "Barbarian",
+                "likes": "Battle",
+                "primaryAbility": "Strength",
+                "complexity": "Average"
+            },
+            {
+                "className": "Bard",
+                "likes": "Performing",
+                "primaryAbility": "Charisma",
+                "complexity": "High"
+            },            
+            {
+                "className": "Cleric",
+                "likes": "Gods",
+                "primaryAbility": "Wisdom",
+                "complexity": "Average"
+            },            
+            {
+                "className": "Druid",
+                "likes": "Nature",
+                "primaryAbility": "Wisdom",
+                "complexity": "High"
+            },
+            {
+                "className": "Fighter",
+                "likes": "Weapons",
+                "primaryAbility": "Strength or Dexterity",
+                "complexity": "Low",
+                "hitDie": "D10",
+                "SavingThrows": "Strength and Constitution",
+                "NumberOfSkills": "2",
+                "SkillList": [
+                    "Acrobatics", 
+                    "AnimalHandling",
+                    "Athletics",
+                    "History",
+                    "Insight",
+                    "Intimidation",
+                    "Persuasion", 
+                    "Perception",
+                    "Survival"
+                ],
+                "weaponProficiencies": [
+                    "Simple",
+                    "Martial"
+                ],
+                "armorTraining": [
+                    "Light",
+                    "Medium",
+                    "Heavy",
+                    "Shields"
+                ],
+                "startingEquipment": [],
+                "startingGold": "155 GP"
+            },           
+            {
+                "className": "Monk",
+                "likes": "Unarmed Combat",
+                "primaryAbility": "Dexterity and Wisdom",
+                "complexity": "High"
+            },
+            {
+                "className": "Paladin",
+                "likes": "Defense",
+                "primaryAbility": "Strength and Charisma",
+                "complexity": "Average"
+            },
+            {
+                "className": "Ranger",
+                "likes": "Survival",
+                "primaryAbility": "Dexterity and Wisdom",
+                "complexity": "High"
+            },
+            {
+                "className": "Rouge",
+                "likes": "Stealth",
+                "primaryAbility": "Dexterity",
+                "complexity": "Low"
+            },
+            {
+                "className": "Sorcerer",
+                "likes": "Power",
+                "primaryAbility": "Charisma",
+                "complexity": "High"
+            },
+            {
+                "className": "Warlock",
+                "likes": "Occult Lore",
+                "primaryAbility": "Charisma",
+                "complexity": "High"
+            },
+            {
+                "className": "Wizard",
+                "likes": "Spellbook",
+                "primaryAbility": "Intelligence",
+                "complexity": "Average"
+            }
+        ],
+        "species": [
+            {
+                "speciesName": "DragonBorn",
+                "creatureType": "Humanoid",
+                "SizeClass": "Medium",
+                "speed": "30 feet",
+                "racialFeatures": [
+                    {
+                        "abilityName": "BreathWeapon",
+                        "AbilityType": "Combat" 
+                    }
+                ]
+            },
+            {
+                "speciesName": "Dwarf",
+                "creatureType": "Humanoid",
+                "SizeClass": "Medium",
+                "speed": "30 feet",
+                "racialFeatures": [{}]
+            },
+            {
+                "speciesName": "Elf",
+                "creatureType": "Humanoid",
+                "SizeClass": "Medium",
+                "speed": "30 feet",
+                "racialFeatures": [{}]
+            },
+            {
+                "speciesName": "Gnome",
+                "creatureType": "Humanoid",
+                "SizeClass": "Small",
+                "speed": "30 feet",
+                "racialFeatures": [{}]
+            },
+            {
+                "speciesName": "Orc",
+                "creatureType": "Humanoid",
+                "SizeClass": "Medium",
+                "speed": "30 feet",
+                "racialFeatures": [{}]
+            }
+        ],
+        "backgrounds": [
+            {
+                "backgroundName": "Acolyte",
+                "Ability Score": ["Intelligence", "Wisdom", "Charisma"],
+                "Feat": "Magic Initiate - Cleric",
+                "Skill Proficency": "",
+                "Tool Proficency": "",
+                "Equiptment": ""
+            }, 
+            {
+                "backgroundName": "Criminal",
+                "Ability Score": ["Dexterity", "Constitution", "Intelligence"],
+                "Feat": "",
+                "Skill Proficency": "",
+                "Tool Proficency": "",
+                "Equiptment": ""
+            },
+            {
+                "backgroundName": "Guard",
+                "Ability Score": ["Strength, Intelligence", "Wisdom"],
+                "Feat": "",
+                "Skill Proficency": "",
+                "Tool Proficency": "",
+                "Equiptment": ""
+            },
+            {
+                "backgroundName": "Sage",
+                "Ability Score": ["Constitution", "Intelligence", "Wisdom"],
+                "Feat": "",
+                "Skill Proficency": "",
+                "Tool Proficency": "",
+                "Equiptment": ""
+            }
+        ]
+    }
+}

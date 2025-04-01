@@ -1,0 +1,468 @@
+{
+    "data": {
+        "title": "D&D 2024",
+        "classes": [           
+            {
+                "className": "Cleric",
+                "likes": "Gods",
+                "primaryAbility": "Wisdom",
+                "complexity": "Average",
+                "hitDie": "D8",
+                "savingThrows": [
+                    "Wisdom",
+                    "Charisma"
+                ],
+                "preparedSpells": 4,
+                "NumberOfSkills": 2,
+                "SkillList": [
+                    "History",
+                    "Insight",
+                    "Medicine",
+                    "Persuasion", 
+                    "Religion"
+                ],
+                "weaponProficiencies": [
+                    "Simple"
+                ],
+                "toolProficiencies": [
+                ],
+                "armorTraining": [
+                    "Light",
+                    "Medium",
+                    "Shields"
+                ],
+                "startingEquipment": [
+                    "ChainShirt",
+                    "Shield",
+                    "Mace",
+                    "Holy Symbol",
+                    "Preis's Pack",
+                    "7 GP"
+                ],
+                "startingGold": "110 GP"
+            },            
+            {
+                "className": "Fighter",
+                "likes": "Weapons",
+                "primaryAbility": "Strength or Dexterity",
+                "complexity": "Low",
+                "hitDie": "D10",
+                "savingThrows": [
+                    "Strength",
+                    "Constitution"
+                ],
+                "preparedSpells": 0,
+                "NumberOfSkills": 2,
+                "SkillList": [
+                    "Acrobatics", 
+                    "AnimalHandling",
+                    "Athletics",
+                    "History",
+                    "Insight",
+                    "Intimidation",
+                    "Persuasion", 
+                    "Perception",
+                    "Survival"
+                ],
+                "weaponProficiencies": [
+                    "Simple",
+                    "Martial"
+                ],
+                "toolProficiencies": [
+                ],
+                "armorTraining": [
+                    "Light",
+                    "Medium",
+                    "Heavy",
+                    "Shields"
+                ],
+                "startingEquipment": [],
+                "startingGold": "155 GP"
+            },           
+            {
+                "className": "Rouge",
+                "likes": "Stealth",
+                "primaryAbility": "Dexterity",
+                "complexity": "Low",
+                "hitDie": "D10",
+                "savingThrows": [
+                    "Dexterity",
+                    "Intelligence"
+                ],
+                "preparedSpells": 0,
+                "NumberOfSkills": 4,
+                "SkillList": [
+                    "Acrobatics", 
+                    "Athletics",
+                    "Deception",
+                    "Insight",
+                    "Intimidation",
+                    "Investigation",
+                    "Perception",
+                    "Persuasion", 
+                    "Sleight of Hand",
+                    "Stealth"
+                ],
+                "weaponProficiencies": [
+                    "Simple",
+                    "Martial(Finesse)",
+                    "Martial(Light)"
+                ],
+                "toolProficiencies": [
+                    "Thieves' Tools"
+                ],
+                "armorTraining": [
+                    "Light"
+                ],
+                "startingEquipment": [],
+                "startingGold": "100 GP"
+            },
+            {
+                "className": "Wizard",
+                "likes": "Spellbook",
+                "primaryAbility": "Intelligence",
+                "complexity": "Average",
+                "hitDie": "D6",
+                "savingThrows": [
+                    "Intelligence",
+                    "Wisdom"
+                ],
+                "preparedSpells": 4,
+                "NumberOfSkills": 2,
+                "SkillList": [
+                    "Arcana",
+                    "History",
+                    "Insight",
+                    "Investigation",
+                    "Medicine",
+                    "Nature", 
+                    "Religion"
+                ],
+                "weaponProficiencies": [
+                    "Simple"
+                ],
+                "toolProficiencies": [
+                ],
+                "armorTraining": [
+                ],
+                "startingEquipment": [],
+                "startingGold": "55 GP"
+            }
+        ],
+        "species": [
+            {
+                "speciesName": "DragonBorn",
+                "creatureType": "Humanoid",
+                "sizeClass": "Medium",
+                "speed": "30 feet",
+                "racialFeatures": [
+                    {
+                        "abilityName": "Draconic Ancestory",
+                        "abilityType": "",
+                        "decription": "",
+                        "options": [
+                                    "Black - Acid",
+                                    "Blue - Lightning",
+                                    "Brass - Fire",
+                                    " Bronze - Lightning",
+                                    "Copper - Acid",
+                                    "Gold - Fire",
+                                    "Green - Poison",
+                                    "Red - Fire",
+                                    "Silver - Cold ",
+                                    "White - Cold"
+                                    ]
+                    },
+                    {
+                        "abilityName": "BreathWeapon",
+                        "abilityType": "Combat",
+                        "Damage": ["1d10", "2d10", "3d10", "4d10"],
+                        "Uses": "x = poficencyMod",
+                        "ResestOn": "LongRest",
+                        "actionType": "Attack"
+                    },
+                    {
+                        "abilityName": "DamageResistance",
+                        "abilityType": "Resistance",
+                        "actionType": "Passive"
+                    },
+                    {
+                        "abilityName": "Darkvision",
+                        "abilityType": "Vision",
+                        "range": "60ft",
+                        "actionType": "Passive"
+
+                    },
+                    {
+                        "abilityName": "Draconic Flight",
+                        "abilityType": "movement",
+                        "range": "playerspeed",
+                        "levelRequirement": "5",
+                        "actionType": "Bonus Action"
+                    }
+                ]
+            },
+            {
+                "speciesName": "Dwarf",
+                "creatureType": "Humanoid",
+                "sizeClass": "Medium",
+                "speed": "30 feet",
+                "racialFeatures": [
+                    {
+                        "abilityName": "Darkvision",
+                        "abilityType": "Vision",
+                        "range": "120 ft",
+                        "actionType": "none"
+                    },
+                    {
+                        "abilityName": "Dwarvin Toughness",
+                        "abilityType": "passive",
+                        "description": "Increase hp by 1 per level",
+                        "actionType": "none"
+                    }, 
+                    {
+                        "abilityName": "Stonecunning",
+                        "abilityType": "Vision",
+                        "description": "Gain Tremor Sense",
+                        "range": "60 ft",
+                        "duration": "10 minutes",
+                        "actionType": "Bonus Action"
+                    }
+                ]
+            },
+            {
+                "speciesName": "Elf",
+                "creatureType": "Humanoid",
+                "sizeClass": "Medium",
+                "speed": "30 feet",
+                "racialFeatures": [
+                    {
+
+                    }
+                ]
+            },
+            {
+                "speciesName": "Gnome",
+                "creatureType": "Humanoid",
+                "sizeClass": "Small",
+                "speed": "30 feet",
+                "racialFeatures": [{}]
+            },
+            {
+                "speciesName": "Orc",
+                "creatureType": "Humanoid",
+                "sizeClass": "Medium",
+                "speed": "30 feet",
+                "racialFeatures": [{}]
+            },
+            {
+                "speciesName": "Goliath",
+                "creatureType": "Humanoid",
+                "sizeClass": "Medium",
+                "speed": "35 feet",
+                "racialFeatures": [{}]
+            }
+        ],
+        "backgrounds": [
+            {
+                "backgroundName": "Acolyte",
+                "abilityScore": ["Intelligence", "Wisdom", "Charisma"],
+                "feat": "Magic Initiate - Cleric",
+                "skillProficency": [
+                    "Insight",
+                    "Religion"
+                ],
+                "toolProficency": "Calligrapher's Supplies",
+                "equipment": []
+            }, 
+            {
+                "backgroundName": "Criminal",
+                "abilityScore": ["Dexterity", "Constitution", "Intelligence"],
+                "feat": "Alert",
+                "skillProficency": [
+                    "Slight of Hand",
+                    "Stealth"
+                ],
+                "toolProficency": "Thieves' Tools",
+                "equipment": []
+            },
+            {
+                "backgroundName": "Guard",
+                "abilityScore": ["Strength, Intelligence", "Wisdom"],
+                "feat": "Alert",
+                "skillProficency": [
+                    "Athletics",
+                    "Perception"
+                ],
+                "toolProficency": "Choose - Gaming Set",
+                "equipment": ""
+            },
+            {
+                "backgroundName": "Sage",
+                "abilityScore": ["Constitution", "Intelligence", "Wisdom"],
+                "feat": "Magic Initiate - Wizard",
+                "skillProficency": [
+                    "Arcana",
+                    "History"
+                ],
+                "toolProficency": "Calligrapher's Supplies",
+                "equipment": ""
+            }
+        ],
+        "spells": [
+            {
+                "spellName": "Fire Bolt",
+                "spellLevel": 0,
+                "spellSchool": "Evocation",
+                "classRestrict": ["Sorcerer", "Wizard"],
+                "castingTime": "Action",
+                "range": "120 feet",
+                "components": ["V", "S"],
+                "duration": "instntaneous",
+                "concentration": false,
+                "Effect" : {},
+                "damage": ["1d10", "2d10", "3d10", "4d10"],
+                "canUpcast": false,
+                "description": ""
+                
+            },
+            {
+
+                "spellName": "Blade Ward",
+                "spellLevel": 0,
+                "spellSchool": "Abjuration",
+                "classRestrict": ["bard", "sorcerer", "warlock", "Wizard"],
+                "castingTime": "Action",
+                "range": "self",
+                "components": ["V", "S"],
+                "duration": "1 minutes",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+                
+            },
+            {
+
+                "spellName": "Blade Ward B",
+                "spellLevel": 0,
+                "spellSchool": "Abjuration",
+                "classRestrict": ["bard", "sorcerer", "warlock", "Wizard"],
+                "castingTime": "Action",
+                "range": "self",
+                "components": ["V", "S"],
+                "duration": "1 minutes",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+                
+            }, 
+            {
+
+                "spellName": "Blade Ward c",
+                "spellLevel": 0,
+                "spellSchool": "Abjuration",
+                "classRestrict": ["bard", "Cleric", "sorcerer", "warlock", "Wizard"],
+                "castingTime": "Action",
+                "range": "self",
+                "components": ["V", "S"],
+                "duration": "1 minutes",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+                
+            }, 
+            {
+
+                "spellName": "spell 1",
+                "spellLevel": 1,
+                "spellSchool": "Abjuration",
+                "classRestrict": ["bard", "Cleric", "sorcerer", "warlock", "Wizard"],
+                "castingTime": "Action",
+                "range": "self",
+                "components": ["V", "S"],
+                "duration": "1 minutes",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+                
+            },
+            {
+
+                "spellName": "spell 2",
+                "spellLevel": 1,
+                "spellSchool": "Conjuration",
+                "classRestrict": ["bard", "Cleric", "sorcerer", "warlock", "Wizard"],
+                "castingTime": "Action",
+                "range": "self",
+                "components": ["V", "S"],
+                "duration": "Instanteneous",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+                
+            },
+            {
+
+                "spellName": "spell 3",
+                "spellLevel": 1,
+                "spellSchool": "Abjuration",
+                "classRestrict": ["bard", "sorcerer", "warlock", "Wizard"],
+                "castingTime": "Action",
+                "range": "self",
+                "components": ["V", "S"],
+                "duration": "1 minutes",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+                
+            },            {
+
+                "spellName": "spell 4",
+                "spellLevel": 1,
+                "spellSchool": "Abjuration",
+                "classRestrict": ["bard", "sorcerer", "warlock", "Wizard"],
+                "castingTime": "Action",
+                "range": "self",
+                "components": ["V", "S"],
+                "duration": "1 minutes",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+                
+            }, 
+            {
+
+                "spellName": "spell 5",
+                "spellLevel": 1,
+                "spellSchool": "Abjuration",
+                "classRestrict": ["bard", "sorcerer", "warlock", "Wizard"],
+                "castingTime": "Action",
+                "range": "self",
+                "components": ["V", "S"],
+                "duration": "1 minutes",
+                "concentration": true,
+                "Effect" : {},
+                "damage": [""],
+                "canUpcast": false,
+                "description": ""
+                
+            }
+            
+        ]
+    }
+}
+
