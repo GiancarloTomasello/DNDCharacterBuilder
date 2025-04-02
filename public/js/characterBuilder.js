@@ -126,8 +126,16 @@ const updateVal = function() {
     armorTrainingElement.textContent = armors;
 
     if(classes[listDiv.selectedIndex].preparedSpells <= 0){
-        spellChoiceElement.innerHTML = "no spells available for class";
+        numSpellsElement.innerHTML = "no spells available for class";
+        numCantripElement.innerHTML = "no cantrips available for class";
+        // spellMenuButton.style.display = 'none'
+        // cantripMenuButton.style.display = 'none'
+
+
         return;
+    }else{
+        // spellMenuButton.style.display = 'block'
+        // cantripMenuButton.style.display = 'block'
     }
 
     // /* Cantrip Selection */
@@ -142,8 +150,16 @@ const updateVal = function() {
     spellIndex = 0;
     classCantrips = getSpellList(0, true);
     cantripIndex = 0;
+
+
     UpdateSpellMenu(null, 0);
     UpdateCantripMenu(null, 0);
+
+    // need to clear out spells added incase they no longer apply to the new calss
+    preparedSpells.clear();
+    preparedCantrips.clear();
+    updatePreparedSpells();
+    updatePreparedCantrips();
 
 }
 
@@ -158,7 +174,7 @@ let classSpells = getSpellList(1);
 let spellIndex = 0;
 let classCantrips = getSpellList(0, true);
 let cantripIndex = 0;
-console.log(classCantrips);
+//console.log(classCantrips);
 
 function ToggleSpellMenu(e){
     e.preventDefault();
@@ -174,7 +190,7 @@ function ToggleSpellMenu(e){
         spellPopupElement.style.display = 'block';
         spellMenuButton.textContent = 'Hide Spell Menu';
     }
-    console.log("openSpellMenu");
+    // console.log("openSpellMenu");
 }
 
 
@@ -191,7 +207,7 @@ function UpdateSpellMenu(e, spellChange){
     }else if(spellIndex < 0){
         spellIndex = classSpells.length -1;
     }
-    console.log(spellIndex);
+    // console.log(spellIndex);
     
     //---Update Spell Menu------//
     spellMenuElement.querySelector("#spellTitle").textContent = classSpells[spellIndex].spellName;
@@ -210,19 +226,20 @@ function AddSpellToCharacter(e){
     e.preventDefault();
     
     if(preparedSpells.has(classSpells[spellIndex].spellName)){
-        console.log("Spell already in library")
+        // console.log("Spell already in library")
         preparedSpells.delete(classSpells[spellIndex].spellName);
     }else if(preparedSpells.size < classes[listDiv.selectedIndex].preparedSpells){ 
         preparedSpells.add(classSpells[spellIndex].spellName);
-        console.log(preparedSpells);
+        // console.log(preparedSpells);
     }
     //console.log("test:" + numSpellsElement.textContent)
-    numSpellsElement.textContent = `Choose Spells ${preparedSpells.size}/${classes[listDiv.selectedIndex].preparedSpells}`
     updatePreparedSpells();
     
 }
 
 function updatePreparedSpells(){
+    numSpellsElement.textContent = `Choose Spells ${preparedSpells.size}/${classes[listDiv.selectedIndex].preparedSpells}`
+
     preparedSpellsElement.innerHTML = '';
     preparedSpells.forEach((spell) => {
         let newdiv = document.createElement('div');
@@ -263,8 +280,8 @@ function UpdateCantripMenu(e, cantripChange){
     }else if(cantripIndex < 0){
         cantripIndex = classCantrips.length -1;
     }
-    console.log(cantripIndex);
-    console.log(classCantrips);
+    // console.log(cantripIndex);
+    // console.log(classCantrips);
 
 
     //---Update cantrip Menu------//
@@ -287,15 +304,16 @@ function AddCantripToCharacter(e){
         preparedCantrips.delete(classCantrips[cantripIndex].spellName);
     }else if(preparedCantrips.size < classes[listDiv.selectedIndex].preparedCantrips){ 
         preparedCantrips.add(classCantrips[cantripIndex].spellName);
-        console.log(preparedCantrips);
+        // console.log(preparedCantrips);
     }
     //console.log("test:" + numSpellsElement.textContent)
-    numCantripElement.textContent = `Choose Cantrips ${preparedCantrips.size}/${classes[listDiv.selectedIndex].preparedCantrips}`
     updatePreparedCantrips();
     
 }
 
 function updatePreparedCantrips(){
+    numCantripElement.textContent = `Choose Cantrips ${preparedCantrips.size}/${classes[listDiv.selectedIndex].preparedCantrips}`
+
     preparedCantripElement.innerHTML = '';
     preparedCantrips.forEach((spell) => {
         let newdiv = document.createElement('div');
