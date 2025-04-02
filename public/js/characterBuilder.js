@@ -125,17 +125,24 @@ const updateVal = function() {
     }
     armorTrainingElement.textContent = armors;
 
+
+    let spellMenuToggle = document.getElementById("toggleSpellMenuButton");
+    let spellCantripToggle = document.getElementById("toggleCantripMenuButton");
+
     if(classes[listDiv.selectedIndex].preparedSpells <= 0){
         numSpellsElement.innerHTML = "no spells available for class";
         numCantripElement.innerHTML = "no cantrips available for class";
-        // spellMenuButton.style.display = 'none'
-        // cantripMenuButton.style.display = 'none'
-
+        spellMenuToggle.style.display = 'none';
+        spellCantripToggle.style.display = 'none';
+        isSpellMenuOpen = true;
+        iscantripMenuOpen = true;
+        ToggleSpellMenu(null);
+        ToggleCantripMenu(null);
 
         return;
     }else{
-        // spellMenuButton.style.display = 'block'
-        // cantripMenuButton.style.display = 'block'
+        spellMenuToggle.style.display = 'block'
+        spellCantripToggle.style.display = 'block'
     }
 
     // /* Cantrip Selection */
@@ -177,6 +184,7 @@ let cantripIndex = 0;
 //console.log(classCantrips);
 
 function ToggleSpellMenu(e){
+    if(e)
     e.preventDefault();
 
     UpdateSpellMenu(e, 0);
@@ -252,7 +260,8 @@ function updatePreparedSpells(){
 
 //---Cantrip Functions---//
 function ToggleCantripMenu(e){
-    e.preventDefault();
+    if(e)
+        e.preventDefault();
 
     UpdateCantripMenu(e, 0);
 

@@ -46,7 +46,8 @@ block main
               div
                 div(id="numberOfSpellsChosen") Choose Spells 0/4
                 div(id="preparedSpells")
-                button(id='spellMenuButton') Open Spell Menu
+                div(id="toggleSpellMenuButton" style="display: block")
+                  button(id='spellMenuButton') Open Spell Menu
             div.classbox(id="spellPopupMenu" style="display: none")
               div.spellMenu(id="spellMenu")
                 h2(id="spellTitle") Fire Bolt
@@ -64,7 +65,8 @@ block main
               div 
                 div(id="numberOfCantripsChosen") Cantrips 0/4
                 div(id="preparedCantrips")
-                button(id='cantripMenuButton' ) Open Cantrip Menu
+                div(id="toggleCantripMenuButton" style="display: block")
+                  button(id='cantripMenuButton') Open Cantrip Menu
             div.classbox(id="cantripPopupMenu" style="display: none")
               div.spellMenu(id="cantripMenu")
                 h2(id="spellTitle") Fire Bolt
